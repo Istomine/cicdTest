@@ -1,5 +1,5 @@
 {
-  "installationFolder": "/home/alexandre/AndroidStudioProjects/opencvtest/sdk/build/intermediates/prefab_package/debug/prefab",
+  "installationFolder": "/home/alexandre/AndroidStudioProjects/cicdTest/sdk/build/intermediates/prefab_package/debug/prefab",
   "gradlePath": ":sdk",
   "packageInfo": {
     "packageName": "sdk",
@@ -8,7 +8,7 @@
     "modules": [
       {
         "moduleName": "opencv_jni_shared",
-        "moduleHeaders": "/home/alexandre/AndroidStudioProjects/opencvtest/sdk/native/jni/include",
+        "moduleHeaders": "/home/alexandre/AndroidStudioProjects/cicdTest/sdk/native/jni/include",
         "moduleExportLibraries": [],
         "abis": []
       }
