@@ -9,9 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout the code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up JDK 1.8
@@ -19,20 +18,13 @@ jobs:
         with:
           java-version: 1.8
 
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
-
-      - name: Build the app
-        run: ./gradlew assembleDebug
+      - name: Build with Gradle
+        run: ./gradlew build
 
       - name: Upload apk
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4.3.6
         with:
-          name: debug apk
+          name: OpenCvTest.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
   test:
