@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.opencvtest"
+    namespace = "com.example.opencv"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.opencvtest"
-        minSdk = 26
+        applicationId = "com.example.opencv"
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -44,8 +44,6 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)

@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "opencvtest"
+rootProject.name = "opencv"
 include(":app")
-include(":sdk")
