@@ -41,7 +41,7 @@ jobs:
   release:
     name: Release
     needs: test
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     permissions:
         contents: write
         pull-requests: write
