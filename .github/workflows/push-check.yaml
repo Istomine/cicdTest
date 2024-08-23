@@ -38,6 +38,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.7
 
+      - name: Set up JDK
+        uses: actions/setup-java@v4.2.2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Gradle Test
         run: ./gradlew test
 
