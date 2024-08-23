@@ -35,10 +35,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: AutoGestion.apk
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+
       - name: Gradle Test
         run: ./gradlew test
 
