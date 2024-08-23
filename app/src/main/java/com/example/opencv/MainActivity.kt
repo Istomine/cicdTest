@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.example.opencv.databinding.*
 import com.example.opencv.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -57,3 +58,4 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 }
+
