@@ -50,14 +50,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: OpenCvTest.apk
-          path: app/build/outputs/apk/debug/
+          path: app/build/outputs/apk/debug/app-debug.apk
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             app/build/outputs/apk/release/app-debug.apk
-          tag_name: ${{github.run_number}}
-          release_name: Release ${{github.run_number}}
+          tag_name: Release v ${{github.run_number}}
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
