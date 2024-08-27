@@ -60,11 +60,23 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: AutoGestion.apk
-      - name: Display struct
-        run: ls -R
 
       - name: Rename file
         run: mv app-release-unsigned.apk AutoGestion.apk
+
+      - name: Display struct
+        run: ls -R
+
+      - name: Apk signature
+        uses: Tlaster/android-sign@v1.2.2
+        with:
+          releaseDirectory: AutoGestion.apk
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          output: .
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "30.0.2"
 
       - name: Create Release
         uses: softprops/action-gh-release@v2

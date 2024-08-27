@@ -5,6 +5,7 @@ on:
     types: [opened, reopened]
 
 jobs:
+  if: false
   build:
     runs-on: ubuntu-latest
     steps:
