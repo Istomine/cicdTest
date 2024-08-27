@@ -72,16 +72,19 @@ jobs:
         with:
           releaseDirectory: AutoGestion.apk
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          output: .
+          output: build/release/signed
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
         env:
           BUILD_TOOLS_VERSION: "30.0.2"
 
+      - name: Display struct
+        run: ls -R
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: AutoGestion.apk
+          files: build/release/signed/AutoGestion.apk
           tag_name: Release_v${{github.run_number}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
