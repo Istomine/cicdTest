@@ -53,34 +53,18 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     permissions:
-        contents: write
-        pull-requests: write
+      contents: write
+      pull-requests: write
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: AutoGestion.apk
-
       - name: Display struct
         run: ls -R
-
-      - name: Sign Android release
-        uses: r0adkll/sign-android-release@v1
-        id: sign_app
-        with:
-          releaseDirectory: .
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-        env:
-          # override default build-tools version (29.0.3) -- optional
-          BUILD_TOOLS_VERSION: "35.0.2"
 
       - name: Rename file
-        run: mv app-release-unsigned.apk AutoGestion.apk
-
-      - name: Display struct
-        run: ls -R
+        run: mv app-debug.apk AutoGestion.apk
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
